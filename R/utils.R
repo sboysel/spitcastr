@@ -1,6 +1,6 @@
 # Format current location for 'nearby' item request
 nearby_req <- function() {
-  geoip <- "https://freegeoip.net/json/"
+  geoip <- "http://freegeoip.net/json/"
   geoip_data <- jsonlite::fromJSON(url(geoip))
   return(paste0("?longitude=", geoip_data$longitude, "&latitude=",
     geoip_data$latitude))
