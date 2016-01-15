@@ -4,7 +4,7 @@
 [![Travis](https://img.shields.io/travis/sboysel/spitcastr.svg?style=flat-square)](https://travis-ci.org/sboysel/spitcastr)
 [![Codecov](https://img.shields.io/codecov/c/github/sboysel/spitcastr.svg?style=flat-square)](https://codecov.io/github/sboysel/spitcastr)
 [![GitHub
-license](https://img.shields.io/github/license/sboysel/spitcastr.svg?style=flat-square)]()
+license](https://img.shields.io/github/license/sboysel/spitcastr.svg?style=flat-square)](https://github.com/sboysel/spitcastr/blob/master/LICENSE)
 
 An `R` client for the [Spitcast Surf Forecast
 API](http://www.spitcast.com/api/docs/).
