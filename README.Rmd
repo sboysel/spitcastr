@@ -1,0 +1,106 @@
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+devtools::load_all()
+```
+# spitcastr
+
+[![Travis](https://img.shields.io/travis/sboysel/spitcastr.svg?style=flat-square)](https://travis-ci.org/sboysel/spitcastr)
+[![Codecov](https://img.shields.io/codecov/c/github/sboysel/spitcastr.svg?style=flat-square)](https://codecov.io/github/sboysel/spitcastr)
+[![GitHub
+license](https://img.shields.io/github/license/sboysel/spitcastr.svg?style=flat-square)]()
+
+An `R` client for the [Spitcast Surf Forecast
+API](http://www.spitcast.com/api/docs/).
+
+## Usage
+Install `spitcastr`
+```{r install, eval=FALSE}
+# install.packages("devtools")
+devtools::install_github("sboysel/spitcastr")
+library(spitcastr)
+```
+### County
+List the spots in a county
+```{r county_spots}
+library(dplyr)
+county(item = "spots", county_name = "Orange County") %>%
+  dplyr::tbl_df()
+```
+List swell forecasts for a particular county
+```{r county_swell}
+county(item = "swell", county_name = "Orange County") %>%
+  dplyr::tbl_df()
+```
+Get tide predictions for a particular county
+```{r county_tide}
+county(item = "tide", county_name = "Orange County") %>%
+  dplyr::tbl_df()
+```
+Get water temperature for a particular county
+```{r county_temp}
+county(item = "temp", county_name = "Orange County") %>%
+  dplyr::tbl_df()
+```
+Get wind speed predictions for a particular county
+```{r county_wind}
+county(item = "wind", county_name = "Orange County") %>%
+  dplyr::tbl_df()
+```
+### Spots
+List all spots
+```{r spot_all, warning=FALSE, message=FALSE}
+spot(item = "all") %>%
+  dplyr::tbl_df() %>%
+  dplyr::filter(county_name == "Santa Barbara") 
+```
+Get the forecast for a specific spot
+```{r spot_forecast}
+spot(item = "forecast", spot_id = 183) %>%
+  dplyr::tbl_df()
+```
+List spot near your location
+```{r spot_nearby}
+spot(item = "nearby") %>%
+  dplyr::tbl_df()
+```
+List neighbors of a given spot
+```{r spot_neighbors}
+spot(item = "neighbors", spot_id = 1, direction = "above") %>%
+  dplyr::tbl_df()
+```
+Search for a spot with a sequence of parameters 
+```{r spot_search_forecast}
+spot(item = "search", size_min = 3, size_max = 8, shape_min = 1) %>%
+  dplyr::tbl_df()
+```
+List top spots
+```{r spot_top}
+spot(item = "top") %>%
+  dplyr::tbl_df()
+```
+
+## Resources
+
+* [Spitcast Surf Forecast API Documentation](http://www.spitcast.com/api/docs/)
+
+Be sure to checkout [Spitcast](http://www.spitcast.com/) and read the ['fine
+print'](www.spitcast.com/api/docs/):
+
+> Public distribution of Spitcast API content must acknowledge Spitcast as
+> the content source, and provide a link to Spitcast.com.
+
+> The Spitcast API is available for non-commercial use. Commercial use is 
+> possible by prior arrangement.
+
+> The Spitcast API is available for low request volume use. Please cache API 
+> responses. Please also make API requests to api.spitcast.com, and NOT to 
+> www.spitcast.com.
+
+> The Spitcast API is experimental and is currently offered on an ad hoc basis 
+> with no guarantee of uptime or availability of continued service. We reserve 
+> the right to disable access to external applications at any time.
+

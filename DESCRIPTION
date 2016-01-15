@@ -1,8 +1,15 @@
 Package: spitcastr
-Title: What the Package Does (one line, title case)
+Title: An R client for Spitcast Surf Forecast API 
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: person("Sam", "Boysel", email = "sboysel@gmail.com", role = c("aut", "cre"))
+Description: Interact with the Spitcast Surf Forecast API within the R workspace.
+URL: https://github.com/sboysel/spitcastr
+BugReports: https://github.com/sboysel/spitcastr/issues
 Depends: R (>= 3.2.3)
-License: What license is it under?
+License: MIT + file LICENSE 
 LazyData: true
+Imports:
+  jsonlite
+Suggests:
+  dplyr,
+  testthat
