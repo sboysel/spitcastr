@@ -16,8 +16,8 @@
 #' @export
 spot <- function(item = "all", spot_id = NULL, ...) {
 
-  if (!(item %in% c("all", "forecast", "nearby", "neighbors",
-                    "top", "search"))) {
+  if (!item %in% c("all", "forecast", "nearby", "neighbors",
+                    "top", "search")) {
     stop(paste("`item`` parameter must be one of 'all', 'forecast', 'nearby'",
          "'neighbors', 'top', or 'search'."))
   }

@@ -9,8 +9,10 @@ test_df <- spot(item = "neighbors", spot_id = id)
 
 test_that("spot function throws errors for bad params", {
   expect_error(spot(item = "foo"))
+  expect_error(spot(item = "forecast"))
+  expect_error(spot(item = "neighbors"))
   expect_silent(spot(item = "all"))
-  expect_error(spot())
+  expect_silent(spot())
   expect_false("coordinates" %in% test_df)
 })
 
@@ -21,5 +23,7 @@ test_that("spot function return proper types", {
   expect_is(spot(item = "neighbors", spot_id = id), df)
   expect_is(spot(item = "top"), df)
   expect_is(spot(item = "search"), df)
+  expect_is(spot(), df)
 })
+
 

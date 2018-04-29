@@ -11,7 +11,7 @@ f <- nearby_req()
 
 test_that("unnest_coords functions properly", {
   expect_error(unnest_coords(b))
-  expect_silent(unnest_coords(c))  
+  expect_silent(unnest_coords(c))
   expect_is(unnest_coords(c), "data.frame")
   expect_true(ncol(c) < ncol(unnest_coords(c)))
 })
@@ -29,7 +29,7 @@ test_that("neighbors_req functions properly", {
   expect_is(e, "character")
   expect_true(grepl("above", e))
   expect_error(neighbors_req())
-  expect_error(neighbors_req(spot_id = ""))
+  expect_error(neighbors_req(spot_id = NULL))
   expect_error(neighbors_req(spot_id = 1, direction = "sideways"))
 })
 

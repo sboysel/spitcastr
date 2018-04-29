@@ -1,6 +1,6 @@
 Package: spitcastr
 Title: An R client for Spitcast Surf Forecast API 
-Version: 0.0.0.9000
+Version: 0.0.1.9000
 Authors@R: person("Sam", "Boysel", email = "sboysel@gmail.com", role = c("aut", "cre"))
 Description: Interact with the Spitcast Surf Forecast API within the R workspace.
 URL: https://github.com/sboysel/spitcastr
@@ -13,3 +13,4 @@ Imports:
 Suggests:
   dplyr,
   testthat
+RoxygenNote: 6.0.1

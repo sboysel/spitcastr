@@ -1,4 +1,4 @@
-#' Format current location for 'nearby' item request
+# Format current location for 'nearby' item request
 nearby_req <- function() {
   geoip <- "http://freegeoip.net/json/"
   geoip_data <- jsonlite::fromJSON(url(geoip))
@@ -9,7 +9,7 @@ nearby_req <- function() {
   return(geoip_query)
 }
 
-#' Format 'neighbors' item request
+# Format 'neighbors' item request
 neighbors_req <- function(spot_id = NULL, ...) {
 
   if (is.null(spot_id)) {
@@ -38,7 +38,7 @@ neighbors_req <- function(spot_id = NULL, ...) {
 
 }
 
-#' Format any additional 'search' item parameters
+# Format any additional 'search' item parameters
 search_req <- function(...) {
   params <- list(...)
   params_req <- paste0("&", names(params), "=", params, collapse = "")
@@ -47,7 +47,7 @@ search_req <- function(...) {
           params_req))
 }
 
-#' Unnest any long / lat pairs to columns
+# Unnest any long / lat pairs to columns
 unnest_coords <- function(df) {
   if (!("coordinates" %in% names(df))) {
     stop("`coordinates` parameter not found.")
