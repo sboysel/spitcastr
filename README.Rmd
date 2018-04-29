@@ -88,7 +88,7 @@ spot(item = "top") %>%
 * [Spitcast Surf Forecast API Documentation](http://www.spitcast.com/api/docs/)
 
 Be sure to checkout [Spitcast](http://www.spitcast.com/) and read the ['fine
-print'](www.spitcast.com/api/docs/):
+print'](http://www.spitcast.com/api/docs/):
 
 > Public distribution of Spitcast API content must acknowledge Spitcast as
 > the content source, and provide a link to Spitcast.com.
